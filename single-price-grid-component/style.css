@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --teal-500: hsl(179, 62%, 43%);
+    --green-400: hsl(71, 73%, 54%);
+    --teal-100: hsl(204, 43%, 93%);
+    --teal-300: hsl(179, 47%, 52%);
+    --gray-500: hsl(218, 22%, 67%);
+    --gray-100: hsla(0, 0%, 100%, 0.7);
+}
+body {
+    align-items: center;
+    background-color: var(--teal-100);
+    display: flex;
+    flex-direction: column;
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    min-height: 100dvh;
+    cursor:default;
+}
+
+main {
+    box-shadow: 0px 0px 24px -10px rgba(87, 87, 87, 0.3);
+    border-radius: .5rem;
+    display: grid;
+    overflow: hidden;
+    max-width: 700px;
+    margin: 3rem 2rem;
+}
+section {
+    padding: 1.4rem;
+}
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+h3 {
+    font-size: 1rem;
+}
+/* community */
+#community {
+    background-color: white;
+}
+#community h2 {
+    color: var(--teal-500);
+
+}
+#community h3 {
+    color: var(--green-400);
+    margin-bottom: 1.5rem;
+}
+#community p {
+    color: var(--gray-500);
+    line-height: 1.8;
+}
+/* subscription */
+#subscription {
+    background-color: var(--teal-500);
+    color: white;
+}
+
+.price {
+    align-items: center;
+    color: var(--gray-100);
+    display: flex;
+    margin-bottom: .3rem;
+}
+.price span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-right: .8rem;
+}
+
+#subscription p {
+    margin-bottom: 1.5rem;
+}
+#subscription button {
+    background-color: var(--green-400);
+    border: none;
+    border-radius: .35rem;
+    box-shadow: 0px 3px 16px 0px rgba(87, 87, 87, 0.5);
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    height: 3rem;
+    width: 100%;
+}
+#why {
+    background-color: var(--teal-300);
+    color: white;
+}
+#why p {
+    line-height: 1.4;
+    color: var(--gray-100);
+
+}
+@media (min-width: 768px ) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        margin: 0;
+    }
+    section {
+        padding: 2rem;
+    }
+    #community {
+        grid-column: 1 / 3;
+    }
+}
