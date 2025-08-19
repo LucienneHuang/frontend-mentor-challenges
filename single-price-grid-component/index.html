@@ -19,35 +19,34 @@
 </head>
 <body>
   <main>
-    <section id="community">
-      <h2>Join our community</h1>
-      <h3>30-day, hassle-free money back guarantee</h2>
+    <section id="community" aria-describedby="community-title">
+      <h2 id="community-title">Join our community</h2>
+      <h3>30-day, hassle-free money back guarantee</h3>
       <p>Gain access to our full library of tutorials along with expert code reviews. 
           Perfect for any developers who are serious about honing their skills.</p>
     </section>
-    <section id="subscription">
-        <h2>Monthly Subscription</h1>
-        <div class="price">
-          <span>
+    <section id="subscription" aria-describedby="subscription-title">
+        <h2 id="subscription-title">Monthly Subscription</h2>
+        <div class="price" aria-label="$29 per month">
+          <span class="num">
             &dollar;29
           </span>
-          per month
+          <span class="per">per month</span>
         </div>
-        <p>Full access for less than &dollar;1 a day</p>
-        <button>Sign Up</button>
+        <p  id="subscription-desc">Full access for less than &dollar;1 a day</p>
+        <button class="button" aria-describedby="subscription-desc">Sign Up</button>
     </section>
-    <section id="why">
-      <h2>Why Us</h1>
-      <p>
-        Tutorials by industry experts<br>
-        Peer &amp; expert code review<br>
-        Coding exercises<br>
-        Access to our GitHub repos<br>
-        Community forum<br>
-        Flashcard decks<br>
-        New videos every week
-      </p>
-
+    <section id="why" aria-labelledby="why-title">
+      <h2 id="why-title">Why Us</h2>
+      <ul class="feature-list">
+        <li>Tutorials by industry experts</li>
+        <li>Peer &amp; expert code review</li>
+        <li>Coding exercises</li>
+        <li>Access to our GitHub repos</li>
+        <li>Community forum</li>
+        <li>Flashcard decks</li>
+        <li>New videos every week</li>
+      </ul>
     </section>
   </main>
 
