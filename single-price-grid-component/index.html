@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Single Price Grid Component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -18,34 +16,37 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1 class="sr-only">Community Monthly Subscription</h1>
+  </header>
   <main>
-    <section id="community" aria-describedby="community-title">
-      <h2 id="community-title">Join our community</h2>
-      <h3>30-day, hassle-free money back guarantee</h3>
-      <p>Gain access to our full library of tutorials along with expert code reviews. 
+    <section class="community">
+      <h2 class="community__title">Join our community</h2>
+      <span class="community__tag">30-day, hassle-free money back guarantee</span>
+      <p class="community__description">Gain access to our full library of tutorials along with expert code reviews. 
           Perfect for any developers who are serious about honing their skills.</p>
     </section>
-    <section id="subscription" aria-describedby="subscription-title">
-        <h2 id="subscription-title">Monthly Subscription</h2>
-        <div class="price" aria-label="$29 per month">
-          <span class="num">
+    <section class="subscription">
+        <h2 class="subscription__title">Monthly Subscription</h2>
+        <div class="subscription__price" aria-label="$29 per month">
+          <span class="subscription__price-num">
             &dollar;29
           </span>
-          <span class="per">per month</span>
+          <span class="subscription__price-per">per month</span>
         </div>
-        <p  id="subscription-desc">Full access for less than &dollar;1 a day</p>
-        <button class="button" aria-describedby="subscription-desc">Sign Up</button>
+        <p class="subscription__description">Full access for less than &dollar;1 a day</p>
+        <button class="subscription__btn">Sign Up</button>
     </section>
-    <section id="why" aria-labelledby="why-title">
-      <h2 id="why-title">Why Us</h2>
-      <ul class="feature-list">
-        <li>Tutorials by industry experts</li>
-        <li>Peer &amp; expert code review</li>
-        <li>Coding exercises</li>
-        <li>Access to our GitHub repos</li>
-        <li>Community forum</li>
-        <li>Flashcard decks</li>
-        <li>New videos every week</li>
+    <section class="features">
+      <h2 class="features__title">Why Us</h2>
+      <ul class="features__list">
+        <li class="features__item">Tutorials by industry experts</li>
+        <li class="features__item">Peer &amp; expert code review</li>
+        <li class="features__item">Coding exercises</li>
+        <li class="features__item">Access to our GitHub repos</li>
+        <li class="features__item">Community forum</li>
+        <li class="features__item">Flashcard decks</li>
+        <li class="features__item">New videos every week</li>
       </ul>
     </section>
   </main>
@@ -53,7 +54,7 @@
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Lucienne</a>.
     </p>
   </footer>
 </body>
