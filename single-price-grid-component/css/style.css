@@ -49,6 +49,11 @@ body {
     cursor:default;
 }
 
+a {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
 .sr-only {
     position: absolute;
     left: -10000px;
