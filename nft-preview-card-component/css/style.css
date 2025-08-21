@@ -49,7 +49,14 @@ body {
     color: var(--font-color-main);
     font-family: var(--font-family-base);
 }
-
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
 .card {
     margin: 0 1.4rem;
     border-radius: 1rem;
