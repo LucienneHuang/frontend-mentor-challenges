@@ -142,7 +142,8 @@ body {
     color: var(--color-white-50);
 }
 .attribution {
-    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
 }
 .attribution a {
     text-decoration: underline;
