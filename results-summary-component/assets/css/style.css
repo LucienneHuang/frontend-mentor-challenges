@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('../../fonts/hanken-grotesk-v11-latin-500.woff2');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('../../fonts/hanken-grotesk-v11-latin-700.woff2');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('../../fonts/hanken-grotesk-v11-latin-800.woff2');
+    font-display: swap;
+    font-weight: 800;
+    font-style: normal;
+}
+:root {
+    /* Primary */
+    --color-light-red: hsl(0, 100%, 67%);
+    --color-light-red-005: hsla(0, 100%, 67%, 0.05);
+    --color-orangey-yellow: hsl(39, 100%, 56%);
+    --color-orangey-yellow-005: hsla(39, 100%, 56%, 0.05);
+    --color-green-teal: hsl(166, 100%, 37%);
+    --color-green-teal-005: hsla(166, 100%, 37%, 0.05);
+    --color-cobalt-blue: hsl(234, 85%, 45%);
+    --color-cobalt-blue-005: hsla(234, 85%, 45%, 0.05);
+    /* Gradients */
+    --color-slate-blue: hsl(252, 100%, 67%);
+    --color-royal-blue: hsl(241, 81%, 54%);
+    --color-violet-blue: hsla(256, 72%, 46%, 1);
+    --color-persian-blue: hsla(241, 72%, 46%, 0);
+    /* Neutral */
+    --color-white: hsl(0, 0%, 100%);
+    --color-pale-blue: hsl(221, 100%, 96%);
+    --color-light-lavender: hsl(241, 100%, 89%);
+    --color-gray-blue: hsl(224, 30%, 27%);
+    --color-gray-blue-05: hsl(224, 30%, 27%, 0.5);
+    /* Typography */
+    --font-family-base: 'Hanken Grotesk', sans-serif;
+    --font-size-body: 18px;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    /* shadow */
+    --shadow-color: 222deg 30% 52%;
+    --shadow-elevation-medium:
+        0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
+        0px 1.4px 1.6px -0.6px hsl(var(--shadow-color) / 0.35),
+        0px 2.8px 3.2px -1.2px hsl(var(--shadow-color) / 0.36),
+        0px 5.5px 6.3px -1.8px hsl(var(--shadow-color) / 0.37),
+        0px 10.7px 12.3px -2.3px hsl(var(--shadow-color) / 0.38);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    min-height: 100dvh;
+}
+main {
+    width: clamp(0px,100%, 768px);
+}
+.score-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    background-color: var(--color-white);
+    cursor: default;
+    user-select: none;
+}
+.score-card__result {
+    align-items: center;
+    background: linear-gradient(180deg, var(--color-slate-blue), var(--color-royal-blue));
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 1.6rem 1.8rem 1.6rem;
+}
+.score-card__result-title {
+    color: var(--color-light-lavender);
+}
+.score-card__score {
+    background: linear-gradient(180deg, var(--color-violet-blue), var(--color-persian-blue));
+    border-radius: 999rem;
+    display: grid;
+    height: 9rem;
+    margin-top: 1.6rem;
+    place-content: center;
+    width: 9rem;
+}
+.score-card__score .score-card__score-num, .score-card__score .score-card__score-total {
+    padding-top: .6rem;
+}
+.score-card__score .score-card__score-num {
+    font-size: clamp(3rem, 3.4rem + 6vw ,4.6rem);
+    font-weight: var(--font-weight-extrabold);
+}
+.score-card__score .score-card__score-total {
+    color: var(--color-light-lavender);
+    text-align: center;
+}
+.score-card__result .score-card__label {
+    font-size: clamp(1.5rem, 1rem + 5vw ,2rem);
+    font-weight: var(--font-weight-extrabold);
+    margin-top: 1.6rem;
+}
+.score-card__desc {
+    color: var(--color-light-lavender);
+    font-size: 1rem;
+    line-height: 1.1;
+    padding: .9rem 1.6rem;
+    text-align: center;
+}
+.score-card__summary {
+    padding: 0 2rem;
+}
+.score-card__summary-title {
+    margin: 1.8rem 0;
+}
+.score-card__list {
+    display: grid;
+    gap: 1.2rem;
+}
+.score-card__item {
+    display: flex;
+    border-radius: 1rem;
+    cursor: pointer;
+    justify-content: space-between;
+    padding: 1rem;
+    transition: transform .3s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:nth-child(1) {
+        background-color: var(--color-light-red-005);
+        & .score-card__label {
+            color: var(--color-light-red);
+        }
+    }
+    &:nth-child(2) {
+        background-color: var(--color-orangey-yellow-005);
+        & .score-card__label {
+            color: var(--color-orangey-yellow);
+        }
+    }
+    &:nth-child(3) {
+        background-color: var(--color-green-teal-005);
+        & .score-card__label {
+            color: var(--color-green-teal);
+        }
+    }
+    &:nth-child(4) {
+        background-color: var(--color-cobalt-blue-005);
+        & .score-card__label {
+            color: var(--color-cobalt-blue);
+        }
+    }
+}
+.score-card__item-meta .score-card__icon {
+    margin-right: .5rem;
+}
+.score-card__item-meta .score-card__label {
+    font-size: 1rem;
+}
+.score-card__item .score-card__item-meta, .score-card__item .score-card__item-value {
+    align-items: center;
+    display: flex;
+}
+.score-card__item-value .score-card__score-total {
+    color: var(--color-gray-blue-05);
+}
+.score-card__cta {
+    background-color: var(--color-gray-blue);
+    border: none;
+    border-radius: 5rem;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: .03rem;
+    margin-top: 1.5rem;
+    padding: 1.2rem 1rem;
+    transition: background-color .3s ease, transform .3s ease;
+    width: 100%;
+    &:hover {
+        background-color: var(--color-slate-blue);
+    }
+    &:active {
+        transform: translateY(2px);
+    }
+    &:focus {
+        outline: 3px dashed var(--color-light-lavender);
+    }
+}
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-pale-blue);
+    }
+    .score-card {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-elevation-medium);
+    }
+    .score-card__score{
+        margin-top: 2.5rem;
+        width: 12.6rem;
+        height: 12.6rem;
+    }
+    .score-card__result {
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    }
+    .score-card__score .score-card__score-num, .score-card__score .score-card__score-total {
+        padding-top: 0;
+    }
+    .score-card__result-title {
+        font-size: 1.5rem;
+        margin-top: 1.2rem;
+    }
+    .score-card__desc {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-bottom: .8rem;
+    }
+    .score-card__summary{
+        padding: 0 3rem;
+    }
+    .score-card__summary-title {
+        font-size: 1.5rem;
+        margin: 2.8rem 0 2.2rem 0;
+    }
+    .score-card__cta {
+        margin-top: 2.6rem;
+    }
+}
+footer {
+    margin-top: 1rem;
+}
