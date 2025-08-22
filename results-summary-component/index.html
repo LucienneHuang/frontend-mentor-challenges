@@ -22,7 +22,7 @@
       <section class="score-card__result">
         <h2 class="score-card__result-title">Your Result</h2>
         <div class="score-card__score">
-          <div class="score-card__score-num">76</div>
+          <div class="score-card__score-num"></div>
           <div class="score-card__score-total">of 100</div>
         </div>
         <div class="score-card__label">Great</div>
@@ -34,44 +34,44 @@
           <!-- reaction -->
           <li class="score-card__item">
             <div class="score-card__item-meta">
-              <img src="./assets/images/icon-reaction.svg" alt="" class="score-card__icon">
-              <span class="score-card__label">Reaction</span>
+              <img src="" alt="" class="score-card__icon">
+              <span class="score-card__label"></span>
             </div>
             <div class="score-card__item-value">
-              <span class="score-card__score-num">80</span>
+              <span class="score-card__score-num"></span>
               <span class="score-card__score-total">&nbsp;&nbsp;/ 100</span>
             </div>
           </li>
           <!-- memory -->
           <li class="score-card__item">
             <div class="score-card__item-meta">
-              <img src="./assets/images/icon-memory.svg" alt="" class="score-card__icon">
-              <span class="score-card__label">Memory</span>
+              <img src="" alt="" class="score-card__icon">
+              <span class="score-card__label"></span>
             </div>
             <div class="score-card__item-value">
-              <span class="score-card__score-num">92</span>
+              <span class="score-card__score-num"></span>
               <span class="score-card__score-total">&nbsp;&nbsp;/ 100</span>
             </div>
           </li>
           <!-- verbal -->
           <li class="score-card__item">
             <div class="score-card__item-meta">
-              <img src="./assets/images/icon-verbal.svg" alt="" class="score-card__icon">
-              <span class="score-card__label">Verbal</span>
+              <img src="" alt="" class="score-card__icon">
+              <span class="score-card__label"></span>
             </div>
             <div class="score-card__item-value">
-              <span class="score-card__score-num">61</span>
+              <span class="score-card__score-num"></span>
               <span class="score-card__score-total">&nbsp;&nbsp;/ 100</span>
              </div>
           </li>
           <!-- visual -->
           <li class="score-card__item">
             <div class="score-card__item-meta">
-              <img src="./assets/images/icon-visual.svg" alt="" class="score-card__icon">
-              <span class="score-card__label">Visual</span>
+              <img src="" alt="" class="score-card__icon">
+              <span class="score-card__label"></span>
             </div>
             <div class="score-card__item-value">
-              <span class="score-card__score-num">73</span>
+              <span class="score-card__score-num"></span>
               <span class="score-card__score-total">&nbsp;&nbsp;/ 100</span>
             </div>
           </li>
@@ -84,9 +84,35 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="https://www.frontendmentor.io/profile/LucienneHuang">Lucienne</a>.
       </div>
-    </footer>
+    </footer> 
   </main>
-  
+  <script>
+    const renderData = async () => {
+      try {
+        const res = await fetch('./data.json')
+        if(!res.ok) throw new Error('Network Response Error')
+        const data = await res.json()
+        const scoreItemEls = document.querySelectorAll('.score-card__item')
+        scoreItemEls.forEach((element, index) => {
+          const target = data[index]
+          if(!target) return
+          const iconEl = element.querySelector('.score-card__icon')
+          iconEl.src = target.icon
+          const categoryEl = element.querySelector('.score-card__label')
+          categoryEl.innerText = target.category
+          const scoreEl = element.querySelector('.score-card__score-num')
+          scoreEl.innerText = target.score
+        })
+        const total = data.reduce((acc, current) => acc + current.score, 0)
+        const avg = Math.round(total / data.length)
+        const avgScoreEl = document.querySelector('.score-card__score .score-card__score-num')
+        avgScoreEl.innerText = avg
+      } catch (error) {
+        console.error('Fetch Error: ', error)
+      }
+    }
+    document.addEventListener('DOMContentLoaded', renderData)
+  </script>
   
 
 </body>
